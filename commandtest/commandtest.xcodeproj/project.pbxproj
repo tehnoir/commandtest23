@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\necho \"ifconfig output:\" `ifconfig`\nthiscommanddoesntexist";
+			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\necho \"IP:\" `curl ifconfig.me`\nthiscommanddoesntexist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
