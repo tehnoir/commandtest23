@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"THIS IS A TEST\"\n/bin/pwd\n/usr/bin/whoami";
+			shellScript = "echo \"THIS IS A TEST\"\n/bin/pwd\n/usr/bin/whoami\nexit(1)";
 		};
 /* End PBXShellScriptBuildPhase section */
 
