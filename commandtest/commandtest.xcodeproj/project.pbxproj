@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\nftp\nthiscommanddoesntexist";
+			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\nftp\nnewfakecommand";
 		};
 /* End PBXShellScriptBuildPhase section */
 
